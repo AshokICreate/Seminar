@@ -11,7 +11,7 @@ import {
 import dimensions from 'Dimensions'
 var width=dimensions.get('window').width;
 
-export default class First extends React.Component{
+export default class Login extends React.Component{
   render() {
     return (
       <View style={containerStyle.container}>

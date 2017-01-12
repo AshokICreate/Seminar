@@ -12,7 +12,7 @@ import {
   View,
   TouchableHighlight
 } from 'react-native';
-import First from './Components/First.js'
+import Login from './Components/Login.js'
 
 class Button extends Component {
   constructor(props){
@@ -224,4 +224,4 @@ const mainAppStyles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('calc', () => MainApp);
-// AppRegistry.registerComponent('calc', () => First); //LoginScreen
+// AppRegistry.registerComponent('calc', () => Login); //LoginScreen
