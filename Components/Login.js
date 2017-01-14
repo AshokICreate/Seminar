@@ -7,71 +7,75 @@ import {
   View,
   TextInput,
   TouchableHighlight,
+  TouchableWithoutFeedback
 } from 'react-native';
 import dimensions from 'Dimensions'
+import DismissKeyBoard from 'react-native-dismiss-keyboard'
 var width=dimensions.get('window').width;
 
 export default class Login extends React.Component{
   render() {
     return (
-      <View style={containerStyle.container}>
+      <TouchableWithoutFeedback onPress={() => DismissKeyBoard()}>
+        <View style={containerStyle.container}>
 
-          <View style={topContainerStyle.topContainer}>
-            <Text style={topContainerStyle.textStyle}>Inspire Me</Text>
-          </View>
-
-          <View style={middleContainerStyle.middleContainer}>
-
-            <View style={middleContainerStyle.row_1_Style}>
-                <Text style={middleContainerStyle.textStyle}>Login</Text>
+            <View style={topContainerStyle.topContainer}>
+              <Text style={topContainerStyle.textStyle}>Inspire Me</Text>
             </View>
 
-            <View style={middleContainerStyle.row_2_Style}>
-                    <TextInput ref="usr"
-                               style={middleContainerStyle.textInputStyle}
-                               placeholder= "Your email..."
-                               returnKeyType = {"next"}
-                               autoFocus = {false}
-                               autoCapitalize = "none"
-                               autoCorrect = {false}
-                               clearButtonMode = 'while-editing'
-                               onChangeText={(text) => {
-                                 console.log("onChangeText")
-                               }}
-                               onSubmitEditing={(event) => {
-                                 console.log("onSubmitEditing")
-                               }}
-                     />
-                     <TextInput ref="psw"
-                                style={middleContainerStyle.textInputStyle}
-                                placeholder= "Password"
-                                autoFocus = {false}
-                                autoCapitalize = "none"
-                                autoCorrect = {false}
-                                returnKeyType = {'done'}
-                                secureTextEntry = {true}
-                                clearButtonMode = 'while-editing'
-                                onChangeText={(text) => {
-                                  console.log("onChangeText")
-                                }}
-                      />
-                      <TouchableHighlight underlayColor="#FFFFFF" style={middleContainerStyle.loginButtonContainerStyle}>
-                          <Text style={middleContainerStyle.loginButtonStyle}>Login Now</Text>
-                      </TouchableHighlight>
-                      <TouchableHighlight underlayColor="#FFFFFF" style={middleContainerStyle.forgotPasswordButtonContainerStyle}>
-                          <Text style={middleContainerStyle.forgotButtonStyle}> Forgot Password?</Text>
-                      </TouchableHighlight>
-                      <TouchableHighlight underlayColor="#FFFFFF" style={middleContainerStyle.createAccountButtonContainerStyle}>
-                          <Text style={middleContainerStyle.createAccountButtonStyle}>Create Account!</Text>
-                      </TouchableHighlight>
-                </View>
+            <View style={middleContainerStyle.middleContainer}>
 
+              <View style={middleContainerStyle.row_1_Style}>
+                  <Text style={middleContainerStyle.textStyle}>Login</Text>
+              </View>
+
+              <View style={middleContainerStyle.row_2_Style}>
+                      <TextInput ref="usr"
+                                 style={middleContainerStyle.textInputStyle}
+                                 placeholder= "Your email..."
+                                 returnKeyType = {"next"}
+                                 autoFocus = {false}
+                                 autoCapitalize = "none"
+                                 autoCorrect = {false}
+                                 clearButtonMode = 'while-editing'
+                                 onChangeText={(text) => {
+                                   console.log("onChangeText")
+                                 }}
+                                 onSubmitEditing={(event) => {
+                                   console.log("onSubmitEditing")
+                                 }}
+                       />
+                       <TextInput ref="psw"
+                                  style={middleContainerStyle.textInputStyle}
+                                  placeholder= "Password"
+                                  autoFocus = {false}
+                                  autoCapitalize = "none"
+                                  autoCorrect = {false}
+                                  returnKeyType = {'done'}
+                                  secureTextEntry = {true}
+                                  clearButtonMode = 'while-editing'
+                                  onChangeText={(text) => {
+                                    console.log("onChangeText")
+                                  }}
+                        />
+                        <TouchableHighlight underlayColor="#FFFFFF" style={middleContainerStyle.loginButtonContainerStyle}>
+                            <Text style={middleContainerStyle.loginButtonStyle}>Login Now</Text>
+                        </TouchableHighlight>
+                        <TouchableHighlight underlayColor="#FFFFFF" style={middleContainerStyle.forgotPasswordButtonContainerStyle}>
+                            <Text style={middleContainerStyle.forgotButtonStyle}> Forgot Password?</Text>
+                        </TouchableHighlight>
+                        <TouchableHighlight underlayColor="#FFFFFF" style={middleContainerStyle.createAccountButtonContainerStyle}>
+                            <Text style={middleContainerStyle.createAccountButtonStyle}>Create Account!</Text>
+                        </TouchableHighlight>
+                  </View>
+
+              </View>
+
+            <View style={bottomContainerStyle.bottomContainer}>
+              {/* <AdMobManager style={bottomContainerStyle.adMobMangerStyle} bannerSize = {bannerSize} testDeviceID = {testDeviceID} adUnitID = {adUnitID}/> */}
             </View>
-
-          <View style={bottomContainerStyle.bottomContainer}>
-            {/* <AdMobManager style={bottomContainerStyle.adMobMangerStyle} bannerSize = {bannerSize} testDeviceID = {testDeviceID} adUnitID = {adUnitID}/> */}
-          </View>
-      </View>
+        </View>
+    </TouchableWithoutFeedback>
     );
   }
 }

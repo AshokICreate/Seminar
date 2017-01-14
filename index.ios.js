@@ -223,5 +223,5 @@ const mainAppStyles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('calc', () => MainApp);
-// AppRegistry.registerComponent('calc', () => Login); //LoginScreen
+// AppRegistry.registerComponent('calc', () => MainApp);
+AppRegistry.registerComponent('calc', () => Login); //LoginScreen
