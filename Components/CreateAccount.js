@@ -13,7 +13,7 @@ import dimensions from 'Dimensions'
 import DismissKeyBoard from 'react-native-dismiss-keyboard'
 var width=dimensions.get('window').width;
 
-export default class Login extends React.Component{
+export default class CreateAccount extends React.Component{
   render() {
     return (
       <TouchableWithoutFeedback onPress={() => DismissKeyBoard()}>
@@ -26,7 +26,7 @@ export default class Login extends React.Component{
             <View style={middleContainerStyle.middleContainer}>
 
               <View style={middleContainerStyle.row_1_Style}>
-                  <Text style={middleContainerStyle.textStyle}>Login</Text>
+                  <Text style={middleContainerStyle.textStyle}>Create Account</Text>
               </View>
 
               <View style={middleContainerStyle.row_2_Style}>
@@ -58,14 +58,24 @@ export default class Login extends React.Component{
                                     console.log("onChangeText")
                                   }}
                         />
+                        <TextInput ref="psw"
+                                   style={middleContainerStyle.textInputStyle}
+                                   placeholder= "Repeat Password..."
+                                   autoFocus = {false}
+                                   autoCapitalize = "none"
+                                   autoCorrect = {false}
+                                   returnKeyType = {'done'}
+                                   secureTextEntry = {true}
+                                   clearButtonMode = 'while-editing'
+                                   onChangeText={(text) => {
+                                     console.log("onChangeText")
+                                   }}
+                         />
                         <TouchableHighlight underlayColor="#FFFFFF" style={middleContainerStyle.loginButtonContainerStyle}>
-                            <Text style={middleContainerStyle.loginButtonStyle}>Login Now</Text>
+                            <Text style={middleContainerStyle.loginButtonStyle}>Submit</Text>
                         </TouchableHighlight>
                         <TouchableHighlight underlayColor="#FFFFFF" style={middleContainerStyle.forgotPasswordButtonContainerStyle}>
-                            <Text style={middleContainerStyle.forgotButtonStyle}> Forgot Password?</Text>
-                        </TouchableHighlight>
-                        <TouchableHighlight underlayColor="#FFFFFF" style={middleContainerStyle.createAccountButtonContainerStyle}>
-                            <Text style={middleContainerStyle.createAccountButtonStyle}>Create Account!</Text>
+                            <Text style={middleContainerStyle.forgotButtonStyle}> Already have Account?</Text>
                         </TouchableHighlight>
                   </View>
 
