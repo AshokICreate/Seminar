@@ -12,14 +12,19 @@ import {
   View,
   TouchableHighlight
 } from 'react-native';
+
+import LifeCycle from './Components/LifeCycle.js'
+
 import Calculator from './Components/Calculator'
 
 import Login from './Components/Login.js'
 import CreateAccount from './Components/CreateAccount.js'
 import ForgotPassword from './Components/ForgotPassword.js'
 
-AppRegistry.registerComponent('calc', () => Calculator);
+AppRegistry.registerComponent('calc', () => LifeCycle);
 
-AppRegistry.registerComponent('calc', () => Login);
-AppRegistry.registerComponent('calc', () => CreateAccount);
-AppRegistry.registerComponent('calc', () => ForgotPassword);
+// AppRegistry.registerComponent('calc', () => Calculator);
+//
+// AppRegistry.registerComponent('calc', () => Login);
+// AppRegistry.registerComponent('calc', () => CreateAccount);
+// AppRegistry.registerComponent('calc', () => ForgotPassword);
